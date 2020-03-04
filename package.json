@@ -1,7 +1,7 @@
 {
   "name": "react-cross-forms",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
+    "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.0",
     "bootstrap": "^4.4.1",
     "formik": "^2.1.4",
@@ -25,20 +25,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test",
-    "test-debug": "react-scripts test -u --watchAll --collectCoverage=false -i --logHeapUsage --detectOpenHandles --detectLeaks --debug",
-    "test-watch": "react-scripts test -u --watchAll --collectCoverage=false",
-    "eject": "react-scripts eject"
+    "test": "node node_modules/jest/bin/jest.js --ci",
+    "test-debug": "node node_modules/jest/bin/jest.js -u --watchAll --collectCoverage=false -i --logHeapUsage --detectOpenHandles --detectLeaks --debug",
+    "test-watch": "node node_modules/jest/bin/jest.js -u --watchAll --collectCoverage=false",
+    "eject": "react-scripts eject",
+    "docs": "yarn generate-docs && yarn gh-pages",
+    "generate-docs": "./scripts/docs.sh",
+    "gh-pages": "NODE_DEBUG=gh-pages && yarn gh-clean && gh-pages --dotfiles -d docs",
+    "gh-clean": "node ./node_modules/gh-pages/bin/gh-pages-clean.js"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -46,9 +46,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "@types/react-test-renderer": "^16.9.2",
     "@types/yup": "^0.26.32",
     "eslint": "^6.8.0",
+    "gh-pages": "^2.2.0",
     "prettier": "^1.19.1",
+    "react-test-renderer": "^16.13.0",
     "ts-jest": "^25.2.1",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",

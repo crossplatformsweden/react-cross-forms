@@ -1,6 +1,6 @@
 module.exports = {
   out: './docs/dist/api/',
-  name: 'Crossplatform React-Native Cognito',
+  name: 'Crossplatform ReactJS Forms',
   mode: 'modules',
   module: 'commonjs',
   target: 'ES6',
@@ -15,7 +15,6 @@ module.exports = {
     '**/*.test.*',
     '**/index.ts',
   ],
-  excludeExternals: true,
   excludeNotExported: true,
   excludePrivate: true,
 };
