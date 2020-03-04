@@ -1,28 +1,15 @@
 import './App.css';
 
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import * as Yup from 'yup';
 
-import logo from './logo.svg';
+import { FormField } from './components/FormField';
 import { Country } from './Country';
-
-interface IUserFields {
-  phone: any;
-  social: any;
-  email: any;
-  password: any;
-  country: any;
-}
-const UserFieldKeys: IUserFields = {
-  phone: 'phone',
-  social: 'social',
-  email: 'email',
-  password: 'password',
-  country: 'country',
-};
+import logo from './logo.svg';
+import { IUserFields, UserFieldKeys } from './types';
 
 const InitialValues: IUserFields = {
   email: '',
@@ -51,7 +38,11 @@ const ValidationRules: IUserFields = {
     .required('Lösenord krävs'),
 };
 
-export const App: React.FunctionComponent = () => {
+type Props = {
+  onSubmit: (formData: any) => void;
+};
+
+export const App: React.FunctionComponent<Props> = (props) => {
   const [countries, setCountries] = useState<Country[] | undefined>(undefined);
 
   useEffect(() => {
@@ -91,13 +82,12 @@ export const App: React.FunctionComponent = () => {
             initialValues={InitialValues}
             validateOnBlur
             validationSchema={Yup.object(ValidationRules)}
-            onSubmit={(
-              values,
-              { setSubmitting, setErrors, setStatus, resetForm }
-            ) => {
+            onSubmit={(values, { setSubmitting, setStatus, resetForm }) => {
               try {
                 setTimeout(() => {
                   console.log('Success');
+                  props.onSubmit(values);
+
                   if (
                     process.env.NODE_ENV ||
                     process.env.NODE_ENV === 'development'
@@ -118,46 +108,33 @@ export const App: React.FunctionComponent = () => {
           >
             {({ isSubmitting }) => (
               <Form>
-                <div>
-                  <Field
-                    name={UserFieldKeys.social}
-                    placeholder="ÅÅMMDD-XXXX"
-                  />
-                  <ErrorMessage name={UserFieldKeys.social} component="span" />
-                </div>
-                <div>
-                  <Field
-                    type="email"
-                    autoComplete="username"
-                    name={UserFieldKeys.email}
-                    placeholder="E-post"
-                  />
-                  <ErrorMessage name={UserFieldKeys.email} component="span" />
-                </div>
-                <div>
-                  <Field
-                    type="phone"
-                    name={UserFieldKeys.phone}
-                    placeholder="Telefonnummer"
-                  />
-                  <ErrorMessage name={UserFieldKeys.phone} component="span" />
-                </div>
-                <div>
-                  <Field
-                    type="password"
-                    autoComplete="new-password"
-                    name={UserFieldKeys.password}
-                    placeholder="Lösenord"
-                  />
-                  <ErrorMessage
-                    name={UserFieldKeys.password}
-                    component="span"
-                  />
-                </div>
+                <FormField
+                  name={UserFieldKeys.social}
+                  placeholder="ÅÅMMDD-XXXX"
+                  label="Personnummer"
+                />
+                <FormField
+                  type="email"
+                  autoComplete="username"
+                  name={UserFieldKeys.email}
+                  label="E-post"
+                />
+                <FormField
+                  type="phone"
+                  name={UserFieldKeys.phone}
+                  label="Telefonnummer"
+                />
+                <FormField
+                  type="password"
+                  autoComplete="new-password"
+                  name={UserFieldKeys.password}
+                  label="Lösenord"
+                />
                 <div>
                   {countries ? (
-                    <Field
+                    <FormField
                       name={UserFieldKeys.country}
+                      label="Land"
                       as="select"
                       className="countries"
                     >
@@ -170,9 +147,8 @@ export const App: React.FunctionComponent = () => {
                           {c.topLevelDomain}
                         </option>
                       ))}
-                    </Field>
+                    </FormField>
                   ) : null}
-                  <ErrorMessage name={UserFieldKeys.country} component="span" />
                 </div>
                 <div className="buttons">
                   <Button
