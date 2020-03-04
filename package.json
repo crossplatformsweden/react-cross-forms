@@ -17,7 +17,9 @@
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.13.0",
+    "react-redux": "^7.2.0",
     "react-scripts": "3.4.0",
+    "redux": "^4.0.5",
     "typescript": "~3.7.2",
     "weak-napi": "^1.0.3",
     "yup": "^0.28.1"
@@ -28,6 +30,7 @@
     "test": "node node_modules/jest/bin/jest.js --ci",
     "test-debug": "node node_modules/jest/bin/jest.js -u --watchAll --collectCoverage=false -i --logHeapUsage --detectOpenHandles --detectLeaks --debug",
     "test-watch": "node node_modules/jest/bin/jest.js -u --watchAll --collectCoverage=false",
+    "test-cov": "node node_modules/jest/bin/jest.js -u --watchAll",
     "eject": "react-scripts eject",
     "docs": "yarn generate-docs && yarn gh-pages",
     "generate-docs": "./scripts/docs.sh",
@@ -38,7 +41,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -48,6 +55,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
+    "@types/react-redux": "^7.1.7",
     "@types/react-test-renderer": "^16.9.2",
     "@types/yup": "^0.26.32",
     "eslint": "^6.8.0",
