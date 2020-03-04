@@ -26,7 +26,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "node node_modules/jest/bin/jest.js --ci",
-    "codecov": "npx codecov -t \"$(CODECOV_TOKEN)\"",
     "test-debug": "node node_modules/jest/bin/jest.js -u --watchAll --collectCoverage=false -i --logHeapUsage --detectOpenHandles --detectLeaks --debug",
     "test-watch": "node node_modules/jest/bin/jest.js -u --watchAll --collectCoverage=false",
     "eject": "react-scripts eject",
@@ -39,11 +38,7 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -55,10 +50,8 @@
     "@babel/preset-react": "^7.8.3",
     "@types/react-test-renderer": "^16.9.2",
     "@types/yup": "^0.26.32",
-    "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "gh-pages": "^2.2.0",
-    "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.0",
     "ts-jest": "^25.2.1",
