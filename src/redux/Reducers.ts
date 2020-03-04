@@ -2,11 +2,6 @@ import { SetFormAction } from './Actions';
 
 const initialState = { formState: [] };
 
-type Props = {
-  state: unknown;
-  action: any;
-};
-
 // @ts-ignore
 export const FormReducer = (state = initialState, action) => {
   if (action && action.type) {

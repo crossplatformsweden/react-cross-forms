@@ -1,6 +1,6 @@
 import { Store } from './Store';
 
-jest.mock('./Reducers', () => {});
+jest.mock('./Reducers', () => ({ RootReducer: jest.fn() }));
 
 describe('Stores', () => {
   test('should ', () => {
