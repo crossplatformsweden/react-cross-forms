@@ -10,6 +10,7 @@ cache:
     - node_modules
 before_script:
   - yarn install --frozen-lockfile
+  - npm i -g codecov
 install:
   - yarn
 deploy:
@@ -22,6 +23,6 @@ deploy:
 script:
   - yarn build
   - yarn test
-  - yarn codecov
+  - codecov
 before_deploy:
   - touch .nojekyll
