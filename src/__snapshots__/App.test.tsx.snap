@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components <App /> renders correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="test-file-stub"
+      title="logo"
+    />
+    <div
+      className="App-form"
+    >
+      <form
+        action="#"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div>
+          <input
+            name="social"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="ÅÅMMDD-XXXX"
+            value=""
+          />
+        </div>
+        <div>
+          <input
+            autoComplete="username"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="E-post"
+            type="email"
+            value=""
+          />
+        </div>
+        <div>
+          <input
+            name="phone"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Telefonnummer"
+            type="phone"
+            value=""
+          />
+        </div>
+        <div>
+          <input
+            autoComplete="new-password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Lösenord"
+            type="password"
+            value=""
+          />
+        </div>
+        <div />
+        <div
+          className="buttons"
+        >
+          <button
+            className="btn btn-success"
+            disabled={false}
+            type="submit"
+          >
+            Submit
+          </button>
+          <button
+            className="btn btn-danger"
+            disabled={false}
+            onReset={[Function]}
+            type="reset"
+          >
+            Rensa
+          </button>
+        </div>
+      </form>
+    </div>
+  </header>
+</div>
+`;
