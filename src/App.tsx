@@ -94,7 +94,7 @@ export const App: React.FunctionComponent = () => {
             validationSchema={Yup.object(ValidationRules)}
             onSubmit={(
               values,
-              { setSubmitting, setErrors, setStatus, resetForm }
+              { setSubmitting, setStatus, resetForm }
             ) => {
               try {
                 setTimeout(() => {
