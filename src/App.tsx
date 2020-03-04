@@ -51,7 +51,7 @@ const ValidationRules: IUserFields = {
     .required('Lösenord krävs'),
 };
 
-const App = () => {
+export const App: React.FunctionComponent = () => {
   const [countries, setCountries] = useState<Country[] | undefined>(undefined);
 
   useEffect(() => {
@@ -198,5 +198,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

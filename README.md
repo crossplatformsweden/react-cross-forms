@@ -3,7 +3,16 @@
 <!-- language-all: javascript -->
 
 # Crossplatform React Forms
+
 Forms with validation for your **[ReactJS](https://reactjs.org/)** apps!
+
+[![Build Status](https://travis-ci.com/crossplatformsweden/react-cross-forms.svg?branch=master)](https://travis-ci.com/crossplatformsweden/react-cross-forms) ![GitHub](https://img.shields.io/github/license/crossplatformsweden/react-cross-forms.svg) [![codecov](https://codecov.io/gh/crossplatformsweden/react-cross-forms/branch/master/graph/badge.svg)](https://codecov.io/gh/crossplatformsweden/react-cross-forms) [![dependencies](https://david-dm.org/crossplatformsweden/react-cross-forms/status.svg)](https://david-dm.org/crossplatformsweden/react-cross-forms) [![peer dependencies](https://img.shields.io/david/peer/crossplatformsweden/react-cross-forms.svg)](https://github.com/crossplatformsweden/react-cross-forms) [![Prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+[![GitHub forks](https://img.shields.io/github/forks/crossplatformsweden/react-cross-forms.svg?style=social&label=Fork)](https://github.com/crossplatformsweden/react-cross-forms)
+[![GitHub stars](https://img.shields.io/github/stars/crossplatformsweden/react-cross-forms.svg?style=social&label=Star)](https://github.com/crossplatformsweden/react-cross-forms) [![GitHub watchers](https://img.shields.io/github/watchers/crossplatformsweden/react-cross-forms.svg?style=social&label=Watch)](https://github.com/crossplatformsweden/react-cross-forms) [![Twitter Follow](https://img.shields.io/twitter/follow/crossplatformse.svg?style=social)](https://twitter.com/crossplatformse)
+
+## API Documentation
+**[https://crossplatformsweden.github.io/react-cross-forms/](https://crossplatformsweden.github.io/react-cross-forms/)**
 
 ## Available Scripts
 
