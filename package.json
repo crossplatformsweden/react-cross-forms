@@ -62,7 +62,6 @@
     "gh-pages": "^2.2.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.0",
-    "redux-devtools": "^3.5.0",
     "ts-jest": "^25.2.1",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",

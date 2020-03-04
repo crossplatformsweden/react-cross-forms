@@ -1,3 +1,4 @@
+import { IUserFields } from '../types';
 /**
  * The Redux action that sets form data
  */
@@ -9,14 +10,14 @@ export type SetFormAction = typeof SetFormAction;
  */
 export interface FormActionResult {
   type: SetFormAction;
-  formData: any;
+  formData: IUserFields;
 }
 
 /**
  * The Redux action creator to generate a {@see FormActionResult}
- * @param formData form data object
+ * @param formData form data object of {@see IUserFields}
  */
-export const SetFormActionCreator = (formData: any) => {
+export const SetFormActionCreator = (formData: IUserFields) => {
   const newAction: FormActionResult = {
     type: 'SetFormAction',
     formData,

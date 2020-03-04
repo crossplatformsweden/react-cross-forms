@@ -9,21 +9,7 @@ import * as Yup from 'yup';
 import { FormField } from './components/FormField';
 import { Country } from './Country';
 import logo from './logo.svg';
-
-interface IUserFields {
-  phone: any;
-  social: any;
-  email: any;
-  password: any;
-  country: any;
-}
-const UserFieldKeys: IUserFields = {
-  phone: 'phone',
-  social: 'social',
-  email: 'email',
-  password: 'password',
-  country: 'country',
-};
+import { IUserFields, UserFieldKeys } from './types';
 
 const InitialValues: IUserFields = {
   email: '',
@@ -52,7 +38,11 @@ const ValidationRules: IUserFields = {
     .required('Lösenord krävs'),
 };
 
-export const App: React.FunctionComponent = () => {
+type Props = {
+  onSubmit: (formData: any) => void;
+};
+
+export const App: React.FunctionComponent<Props> = (props) => {
   const [countries, setCountries] = useState<Country[] | undefined>(undefined);
 
   useEffect(() => {
@@ -92,13 +82,12 @@ export const App: React.FunctionComponent = () => {
             initialValues={InitialValues}
             validateOnBlur
             validationSchema={Yup.object(ValidationRules)}
-            onSubmit={(
-              values,
-              { setSubmitting, setStatus, resetForm }
-            ) => {
+            onSubmit={(values, { setSubmitting, setStatus, resetForm }) => {
               try {
                 setTimeout(() => {
                   console.log('Success');
+                  props.onSubmit(values);
+
                   if (
                     process.env.NODE_ENV ||
                     process.env.NODE_ENV === 'development'
@@ -128,23 +117,24 @@ export const App: React.FunctionComponent = () => {
                   type="email"
                   autoComplete="username"
                   name={UserFieldKeys.email}
-                  placeholder="E-post"
+                  label="E-post"
                 />
                 <FormField
                   type="phone"
                   name={UserFieldKeys.phone}
-                  placeholder="Telefonnummer"
+                  label="Telefonnummer"
                 />
                 <FormField
                   type="password"
                   autoComplete="new-password"
                   name={UserFieldKeys.password}
-                  placeholder="Lösenord"
+                  label="Lösenord"
                 />
                 <div>
                   {countries ? (
                     <FormField
                       name={UserFieldKeys.country}
+                      label="Land"
                       as="select"
                       className="countries"
                     >

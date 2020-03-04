@@ -1,20 +1,23 @@
 import { SetFormAction } from './Actions';
-import { combineReducers } from 'redux';
 
-const initialState = {};
+const initialState = { formState: [] };
 
 type Props = {
-  state?: any;
+  state: unknown;
   action: any;
 };
 
-export const FormReducer = ({ state = initialState, action }: Props) => {
-  switch (action.type) {
-    case SetFormAction:
-      return Object.assign({}, state, { formState: action.formState });
-    default:
-      return state;
+// @ts-ignore
+export const FormReducer = (state = initialState, action) => {
+  if (action && action.type) {
+    switch (action.type) {
+      case SetFormAction:
+        return Object.assign({}, state, { formState: action?.formState });
+      default:
+        return state;
+    }
   }
+  return state;
 };
 
-export const RootReducer = combineReducers(FormReducer);
+export const RootReducer = FormReducer;
