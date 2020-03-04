@@ -1,13 +1,14 @@
 import './App.css';
 
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import * as Yup from 'yup';
 
-import logo from './logo.svg';
+import { FormField } from './components/FormField';
 import { Country } from './Country';
+import logo from './logo.svg';
 
 interface IUserFields {
   phone: any;
@@ -118,45 +119,31 @@ export const App: React.FunctionComponent = () => {
           >
             {({ isSubmitting }) => (
               <Form>
-                <div>
-                  <Field
-                    name={UserFieldKeys.social}
-                    placeholder="ÅÅMMDD-XXXX"
-                  />
-                  <ErrorMessage name={UserFieldKeys.social} component="span" />
-                </div>
-                <div>
-                  <Field
-                    type="email"
-                    autoComplete="username"
-                    name={UserFieldKeys.email}
-                    placeholder="E-post"
-                  />
-                  <ErrorMessage name={UserFieldKeys.email} component="span" />
-                </div>
-                <div>
-                  <Field
-                    type="phone"
-                    name={UserFieldKeys.phone}
-                    placeholder="Telefonnummer"
-                  />
-                  <ErrorMessage name={UserFieldKeys.phone} component="span" />
-                </div>
-                <div>
-                  <Field
-                    type="password"
-                    autoComplete="new-password"
-                    name={UserFieldKeys.password}
-                    placeholder="Lösenord"
-                  />
-                  <ErrorMessage
-                    name={UserFieldKeys.password}
-                    component="span"
-                  />
-                </div>
+                <FormField
+                  name={UserFieldKeys.social}
+                  placeholder="ÅÅMMDD-XXXX"
+                  label="Personnummer"
+                />
+                <FormField
+                  type="email"
+                  autoComplete="username"
+                  name={UserFieldKeys.email}
+                  placeholder="E-post"
+                />
+                <FormField
+                  type="phone"
+                  name={UserFieldKeys.phone}
+                  placeholder="Telefonnummer"
+                />
+                <FormField
+                  type="password"
+                  autoComplete="new-password"
+                  name={UserFieldKeys.password}
+                  placeholder="Lösenord"
+                />
                 <div>
                   {countries ? (
-                    <Field
+                    <FormField
                       name={UserFieldKeys.country}
                       as="select"
                       className="countries"
@@ -170,9 +157,8 @@ export const App: React.FunctionComponent = () => {
                           {c.topLevelDomain}
                         </option>
                       ))}
-                    </Field>
+                    </FormField>
                   ) : null}
-                  <ErrorMessage name={UserFieldKeys.country} component="span" />
                 </div>
                 <div className="buttons">
                   <Button

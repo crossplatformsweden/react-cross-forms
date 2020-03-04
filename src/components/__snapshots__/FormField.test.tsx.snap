@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components <FormField /> renders correctly 1`] = `
+<div
+  initialValues={Object {}}
+  onSubmit={[MockFunction]}
+>
+  <div>
+    <label />
+    <div />
+    <div
+      component="span"
+      name=""
+    />
+  </div>
+</div>
+`;
