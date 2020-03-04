@@ -1,16 +1,21 @@
 language: node_js
 sudo: false
 node_js:
-  - 8
+  - lts/*
 cache:
+  yarn: true
   directories:
+    - ~/.npm
+    - .jest
     - node_modules
+before_script:
+  - yarn install --frozen-lockfile
 install:
   - yarn
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+  github_token: $GITHUB_TOKEN
   keep_history: true
   on:
     branch: master
