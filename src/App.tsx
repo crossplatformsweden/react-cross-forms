@@ -52,6 +52,7 @@ export const App: React.FunctionComponent<Props> = (props) => {
         const local = localStorage.getItem(UserFieldKeys.country);
         if (local?.length) {
           setCountries(JSON.parse(local));
+          return;
         }
         const response = await fetch('https://restcountries.eu/rest/v2/all');
         if (!response || !response.ok) {

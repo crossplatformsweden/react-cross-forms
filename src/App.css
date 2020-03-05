@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: large;
 }
 
 .App-logo {
@@ -48,18 +49,20 @@
   width: 150pt;
 }
 
-input, select {
+input, select, label {
   display: flex;
   flex-direction: row;
   margin-top: 5pt;
   align-items: center;
   justify-content: center;
+  font-size: large;
 }
 
 button {
   display: flex;
   flex-direction: row;
   margin-top: 10pt;
+  font-size: large;
 }
 
 @keyframes App-logo-spin {
