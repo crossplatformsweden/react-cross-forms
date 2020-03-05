@@ -1,6 +1,7 @@
 import './App.css';
 
 import { Form, Formik } from 'formik';
+import { Persist } from 'formik-persist';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -150,6 +151,8 @@ export const App: React.FunctionComponent<Props> = (props) => {
                     </FormField>
                   ) : null}
                 </div>
+                {/* This is what persists the form */}
+                <Persist name="signup" />
                 <div className="buttons">
                   <Button
                     type="submit"
