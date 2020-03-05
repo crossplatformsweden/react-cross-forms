@@ -12,6 +12,7 @@ Forms with validation for your **[ReactJS](https://reactjs.org/)** apps!
 [![GitHub stars](https://img.shields.io/github/stars/crossplatformsweden/react-cross-forms.svg?style=social&label=Star)](https://github.com/crossplatformsweden/react-cross-forms) [![GitHub watchers](https://img.shields.io/github/watchers/crossplatformsweden/react-cross-forms.svg?style=social&label=Watch)](https://github.com/crossplatformsweden/react-cross-forms) [![Twitter Follow](https://img.shields.io/twitter/follow/crossplatformse.svg?style=social)](https://twitter.com/crossplatformse)
 
 ## API Documentation
+
 **[https://crossplatformsweden.github.io/react-cross-forms/](https://crossplatformsweden.github.io/react-cross-forms/)**
 
 ## Available Scripts

@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "**** scripts/docs.sh START *******"
 echo "******** Remove TypeScript build ********"
-rm -rf lib
+rm -rf build
 echo "******** TypeScript build ********"
-tsc
+npx tsc
 echo "**** Generate docs *******"
-npx typedoc --out docs source
+npx typedoc --out docs src
 echo "**** go to docs folder *******"
 cd docs
 echo "**** create .nojekyll in docs *******"
